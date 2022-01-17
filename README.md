@@ -5,5 +5,5 @@ The popular [UCT](http://ggp.stanford.edu/readings/uct.pdf) algorithm. MCTS can 
 
 This algorithm is useful when a simulator of the environment is available. Starting with the current state, all actions are simulated. If the next state-action pair has been encountered before, UCT picks the action with the highest upper-confidence bound on Q-value. This is implemented in the function `select_child`. The first time a particular state-action pair is encountered (a leaf node), its Q-value is estimated by randomly picking actions until the simulation ends. This estimated Q-value for the leaf node is incorporated into the Q-values of transitions leading to the leaf node, with appropriate discounting, by the `backpropagate` function. After `num_simulations` runs, the action picked the most is returned.  
 
-There are numerous ways to modify MCTS. In environments with a long or infinite horizon, a statistical esitmate of the value function can be used to assess the value of leaf nodes. 
+There are numerous ways to modify MCTS. In environments with a long or infinite horizon, a statistical estimate of the value function can be used to assess the value of leaf nodes. 
 
